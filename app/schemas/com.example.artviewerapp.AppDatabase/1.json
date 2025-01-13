@@ -1,0 +1,64 @@
+{
+  "formatVersion": 1,
+  "database": {
+    "version": 1,
+    "identityHash": "a9a91a2788dc167d50dc98ab9d4d653f",
+    "entities": [
+      {
+        "tableName": "favorites",
+        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`objectID` INTEGER NOT NULL, `title` TEXT, `primaryImage` TEXT, `accessionYear` TEXT, `artistDisplayName` TEXT, `artistDisplayBio` TEXT, PRIMARY KEY(`objectID`))",
+        "fields": [
+          {
+            "fieldPath": "objectID",
+            "columnName": "objectID",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "title",
+            "columnName": "title",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "primaryImage",
+            "columnName": "primaryImage",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "accessionYear",
+            "columnName": "accessionYear",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "artistDisplayName",
+            "columnName": "artistDisplayName",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "artistDisplayBio",
+            "columnName": "artistDisplayBio",
+            "affinity": "TEXT",
+            "notNull": false
+          }
+        ],
+        "primaryKey": {
+          "autoGenerate": false,
+          "columnNames": [
+            "objectID"
+          ]
+        },
+        "indices": [],
+        "foreignKeys": []
+      }
+    ],
+    "views": [],
+    "setupQueries": [
+      "CREATE TABLE IF NOT EXISTS room_master_table (id INTEGER PRIMARY KEY,identity_hash TEXT)",
+      "INSERT OR REPLACE INTO room_master_table (id,identity_hash) VALUES(42, 'a9a91a2788dc167d50dc98ab9d4d653f')"
+    ]
+  }
+}
